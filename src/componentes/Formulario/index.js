@@ -6,10 +6,6 @@ import './Formulario.css'
 
 const Formulario = (props) => {
 
-    const tipos = [
-        'Bug', 'Dragon', 'Electric', 'Fighting', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Water'
-    ]
-
     const [nome, setNome] = useState('');
     const [categoria, setCategoria] = useState('');
     const [imagem, setImagem] = useState('');
@@ -24,6 +20,10 @@ const Formulario = (props) => {
             imagem: imagem,
             tipo: tipo
         })
+        setNome('')
+        setCategoria('')
+        setImagem('')
+        setTipo('')
     }
 
     return (
@@ -50,7 +50,7 @@ const Formulario = (props) => {
                 <ListaSuspensa 
                     obrigatorio={true} 
                     label="Tipos" 
-                    itens={ tipos }
+                    itens={ props.tipos }
                     valor={tipo}
                     aoAlterado={valor => setTipo(valor)} />
                 <Botao>
