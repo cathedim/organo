@@ -13,7 +13,6 @@ const Formulario = (props) => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault();
-        console.log('Form foi submetido -> ', nome, categoria, imagem, tipo);
         props.aoPokemonCadastrado({
             nome: nome,
             categoria: categoria,
@@ -49,7 +48,7 @@ const Formulario = (props) => {
                     aoAlterado={valor => setImagem(valor)} />
                 <ListaSuspensa 
                     obrigatorio={true} 
-                    label="Tipos" 
+                    label="Tipo" 
                     itens={ props.tipos }
                     valor={tipo}
                     aoAlterado={valor => setTipo(valor)} />
